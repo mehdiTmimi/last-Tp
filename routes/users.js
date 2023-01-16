@@ -44,9 +44,16 @@ router.post("/login",async (req,res)=>{
     
     const match = await bcrypt.compare(pwd,findUser.pwd)
     if(match)
+    {
+        // insertion d une propriete dans la session
+        req.session.login=login;
         return res.json({message:'login success'});
-    
+    }
     res.status(400).json({message:'incorrect password'});
+})
+router.post("/logout",async (req,res)=>{
+   req.session.destroy();
+    res.json({message:'logout success'});
 })
 
 module.exports.UserRouter=router;
