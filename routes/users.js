@@ -47,7 +47,7 @@ router.post("/login",async (req,res)=>{
     {
         // insertion d une propriete dans la session
         req.session.login=login;
-        return res.json({message:'login success'});
+        return res.json({message:'login success'});//200
     }
     res.status(400).json({message:'incorrect password'});
 })

@@ -4,6 +4,7 @@ const dotenv=require('dotenv');
 const session = require('express-session')
 const { UserRouter } = require('./routes/users');
 const { memosRouter } = require('./routes/memos');
+const fs=require("fs")
 dotenv.config(); // require('dotenv').config()
 //mongodb
 mongoose.connect
@@ -13,6 +14,8 @@ mongoose.connect
 
 //express
 const app=express();
+
+app.use(express.static("./public"))
 //middleware to parse json data on body request
 app.use(express.json())
 
@@ -27,8 +30,8 @@ app.use(session({
 
 app.use('/users',UserRouter)
 
-app.get('/',(req,res)=>{
-    res.send("hi");
+app.get('/hi',(req,res)=>{
+    res.send({message:"hi"});
 })
 
 // check authentification (gard / interceptor)
