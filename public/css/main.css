@@ -16,7 +16,12 @@
 }
 
 
-
+.delete{
+    border: 0px;
+    padding: 10px 20px;
+    background-color: rgb(187, 58, 58);
+    color: white;
+}
 /* header */
 header{
     display: flex;

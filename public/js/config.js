@@ -17,6 +17,6 @@ export const passwordRegister = document.getElementById("passwordRegister");
 export const passwordRegister2 = document.getElementById("passwordRegister2");
 export const registerBtn = document.getElementById("registerBtn");
 export const logoutElement = document.getElementById("logoutElement");
-
+export const loading = document.getElementById("loading");
 
 

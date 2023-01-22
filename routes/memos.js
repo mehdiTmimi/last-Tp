@@ -23,7 +23,7 @@ router.post("",async (req,res)=>{
     const user=await User.findOne({login:login})
     user.memos.push(dataMemo)
     const data = await user.save();
-    res.json(data);
+    res.json(data.memos[data.memos.length-1]);
     }catch(err)
     {
         res.status(500).send({message:err})

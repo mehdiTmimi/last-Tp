@@ -1,5 +1,5 @@
 import { loginElement, logoutElement, url } from "./config.js"
-import { viderRegister } from "./main.js";
+import { viderLogin, viderRegister } from "./main.js";
 
 export const authentifier=(login,pwd)=>{
     const dataToSend = {login:login,pwd:pwd}
@@ -15,9 +15,11 @@ export const authentifier=(login,pwd)=>{
             window.location="#application"
             loginElement.classList.add("hidden")
             logoutElement.classList.remove("hidden")
+            viderLogin();
             res.json().then(data=>{
                 const {nom}=data;
                 logoutElement.children[0].innerText="Logout("+nom+")"
+
                 // insertion du JWT dans le local storage
             }).catch(err=>alert(err))
             // (Logout (Sarah))
