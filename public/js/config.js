@@ -1,4 +1,4 @@
-export const url=" http://localhost:30000"
+export const url=" http://localhost:3000"
 
 export const loginBtn = document.getElementById("loginBtn");
 export const emailLogin = document.getElementById("emailLogin");
@@ -16,5 +16,7 @@ export const nameRegister = document.getElementById("nameRegister");
 export const passwordRegister = document.getElementById("passwordRegister");
 export const passwordRegister2 = document.getElementById("passwordRegister2");
 export const registerBtn = document.getElementById("registerBtn");
+export const logoutElement = document.getElementById("logoutElement");
+
 
 
